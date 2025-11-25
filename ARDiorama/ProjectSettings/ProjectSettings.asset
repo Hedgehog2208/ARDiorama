@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 65deac1018e08254ab6d163f32f533bd
+  productGUID: b7228c8694dde9f41890de54dc044531
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: ARDiorama
+  productName: My project2
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -769,14 +769,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: ARDiorama
+  metroPackageName: My project2
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: ARDiorama
+  metroApplicationDescription: My project2
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -846,10 +846,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: ab565aa7-53e6-4b06-8897-65a1444f5cab
+  cloudProjectId: 4a020db4-2b5b-4960-832b-02d7ba7585ab
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: ARDiorama 2025-11-25_13-56-44
+  projectName: My project2
   organizationId: hedgeh0z0g
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
