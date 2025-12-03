@@ -5,8 +5,10 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
     public GameObject Earth;
-    public GameObject House1;
+    public GameObject earthParent;
+    public GameObject house1;
 
+    private GameObject obj;
     private Camera cam;
 
     void Start()
@@ -17,7 +19,7 @@ public class Spawn : MonoBehaviour
 
 	private void Update()
 	{
-		
+        SpawnRay();
 	}
 
 	private void EarthSpawn()
@@ -29,13 +31,44 @@ public class Spawn : MonoBehaviour
         {
             for (float j = firstY; j < firstY + 10; j++)
             {
-                Instantiate(Earth, new Vector3(i, 0, j), Quaternion.identity);
+                Instantiate(Earth, new Vector3(i, 0, j), Quaternion.identity, earthParent.transform);
             }
         }
     }
 
     private void SpawnRay()
     {
-        
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit) && Input.GetMouseButtonDown(0))
+        {
+            SpawnTown(hit);
+        }
+    }
+
+    private void SpawnTown(RaycastHit hit)
+    {
+        if (hit.collider.tag == "Earth")
+        {
+            obj = Instantiate(house1, hit.transform.position, Quaternion.identity);
+            obj.transform.localScale = new Vector3(1, 0.25f, 1);
+            obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.localScale.y/2, obj.transform.position.z);
+            return;
+        }
+        if (hit.collider.tag == "House1")
+        {
+            hit.transform.localScale = new Vector3(1, 0.75f, 1);
+            hit.collider.tag = "House2";
+			obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.localScale.y / 2, obj.transform.position.z);
+			return;
+		}
+        if (hit.collider.tag == "House2")
+        {
+			hit.transform.localScale = new Vector3(1, 1.25f, 1);
+			hit.collider.tag = "House3";
+            obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.localScale.y / 2, obj.transform.position.z);
+			return;
+		}
     }
 }
