@@ -9,20 +9,8 @@ public class Spawn : MonoBehaviour
     public GameObject house1;
 
     private GameObject obj;
-    private Camera cam;
 
-    void Start()
-    {
-        cam = Camera.main;
-        EarthSpawn();
-    }
-
-	private void Update()
-	{
-        SpawnRay();
-	}
-
-	private void EarthSpawn()
+	public void EarthSpawn() // Спавним землю
     {
         float firstI = -4.5f;
         float firstY = -4.5f;
@@ -36,7 +24,7 @@ public class Spawn : MonoBehaviour
         }
     }
 
-    private void SpawnRay()
+    public void SpawnRay(Camera cam) // Создаем луч
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -47,7 +35,7 @@ public class Spawn : MonoBehaviour
         }
     }
 
-    private void SpawnTown(RaycastHit hit)
+    private void SpawnTown(RaycastHit hit) // Спавним и редактируем строения
     {
         if (hit.collider.tag == "Earth")
         {
